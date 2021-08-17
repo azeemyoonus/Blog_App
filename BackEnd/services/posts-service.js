@@ -20,3 +20,13 @@ exports.getAllPosts = () => {
         })
     })
 }
+
+exports.deletePost =(id)=>{
+    return new Promise((resolve, reject)=>{
+        Post.findByIdAndRemove(id).then((res)=>{
+            resolve(res)
+        }).catch((err)=>{
+            reject(err)
+        })
+    })
+}

@@ -13,6 +13,10 @@ export class PostsService {
   }
 
   getAllPosts() {
-    return this.http.get('http://localhost:3000/getAllPost')
+    return this.http.get(`http://localhost:3000/getAllPost`)
+  }
+  
+  deletePost(id: string) {
+    return this.http.delete(`http://localhost:3000/deletePost/${id}`);
   }
 }

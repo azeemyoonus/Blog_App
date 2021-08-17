@@ -1,6 +1,6 @@
 var userServices = require('../services/user-service')
 var bcrypt = require('bcrypt')
-var postServices= require('../services/posts-service')
+
 exports.createUser = async (req, res) => {
     let user = req.body;
     user.password = await bcrypt.hash(user.password, 10)
@@ -30,26 +30,4 @@ exports.userLogin = async (req, res) => {
 
 
 
-}
-exports.addPost = async (req, res) => {   
-    try {
-        let data = {
-            "response": await postServices.addPost(req.body)
-        }
-        res.send(data)
-    }
-    catch(e){
-        res.status(404).send({ "error": e });
-    }
-}
-exports.getAllPost=async (req,res)=>{
-try{
-    let data={
-        "response": await postServices.getAllPosts()
-    }
-    res.send(data);
-}
-catch(e){
-    res.status(404).send({ "error": e });
-}
 }

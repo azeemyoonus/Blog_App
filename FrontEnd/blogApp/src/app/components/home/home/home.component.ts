@@ -1,4 +1,6 @@
+import { identifierModuleUrl } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { PostsService } from 'src/app/services/posts/posts.service';
 
 @Component({
@@ -7,20 +9,28 @@ import { PostsService } from 'src/app/services/posts/posts.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  posts:any;
+  posts: any;
 
-  constructor(private postService :PostsService) { }
+  constructor(private postService: PostsService,
+    private route: Router) { }
   ngOnInit(): void {
     this.getAllPosts()
-    console.log("this",this.posts)
   }
-  getAllPosts(){
-   this.postService.getAllPosts().subscribe((data: any)=>{
-     this.posts=data.response;
-     console.log(this.posts)
-   })
-    // console.log(this.posts);
+
+  getAllPosts() {
+    this.postService.getAllPosts().subscribe((data: any) => {
+      this.posts = data.response;
+      console.log(this.posts)
+    })
   }
- 
-  
+
+  deletePost(id: string) {
+    if(confirm("are you sure want to delete")){   
+    this.postService.deletePost(id).subscribe(data => {
+      this.getAllPosts()
+    })
+  }
+  }
+
+
 }
