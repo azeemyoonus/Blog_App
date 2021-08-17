@@ -30,3 +30,21 @@ exports.deletePost =(id)=>{
         })
     })
 }
+exports.getPostById=(id)=>{
+    return new Promise((resolve, reject)=>{
+        Post.findById(id).then((res)=>{
+            resolve(res)
+        }).catch((err)=>{
+            reject(err)
+        })
+    })
+}
+exports.updatePost=(id, data)=>{
+    return new Promise((resolve,reject)=>{
+        Post.findByIdAndUpdate(id, data).then((res)=>{
+            resolve(res)
+        }).catch((err)=>{
+            reject(err)
+        })
+    })
+}

@@ -4,30 +4,30 @@
             <form (ngSubmit)='addpost(addpostForm)' #addpostForm='ngForm'>
                 <div class="conatiner text-muted">
                     <div class="form-floating my-4   mx-3 ">
-                        <input type="text" class="form-control border-muted" ngModel required='required' name='title' id="title"
+                        <input type="text" class="form-control border-muted" ngModel [(ngModel)]="Post.title"  required='required' name='title' id="title"
                             placeholder="Enter Title">
-                        <label for="title">Title</label>
+                        <label for="title">Title</label>                      
                     </div>
                     <div class="ms-3">
                         <label class="ms-3" for='category'>Category</label>
                         <div class="ms-2  form-check category form-check-inline">
-                            <input class="form-check-input" type="radio" required='required' name="category" ngModel id="inlineRadio1"
+                            <input class="form-check-input" type="radio" required='required' ngModel name="category"  [(ngModel)]="Post.category" id="inlineRadio1"
                                 value="Techninal">
                             <label class="form-check-label" for="inlineRadio1">Technical</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" required='required' name="category" ngModel id="inlineRadio2"
+                            <input class="form-check-input" type="radio" required='required' ngModel name="category"  [(ngModel)]="Post.category" id="inlineRadio2"
                                 value="Gardening">
                             <label class="form-check-label" for="inlineRadio2">Gardening</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio"required='required' name="category" ngModel id="inlineRadio3"
+                            <input class="form-check-input" type="radio"required='required' ngModel name="category"  [(ngModel)]="Post.category" id="inlineRadio3"
                                 value="Social">
                             <label class="form-check-label" for="inlineRadio3">Social</label>
                         </div>
                     </div>
                         <div class="form-floating my-4  mx-3">
-                            <textarea class="form-control" required='required' ngModel placeholder="Content" name='content' ngModel
+                            <textarea class="form-control" required='required' ngModel  [(ngModel)]="Post.content" placeholder="Content" name='content' ngModel
                                 id="content" style="height: 200px"></textarea>
                             <label for="content fs-1">Contents</label>
                         </div>
@@ -37,12 +37,12 @@
                         <div class="col-md-7 col-sm-7 col-lg-8 pt-2">
                             <label class="ms-4" for='category'>Type</label>
                             <div class="ms-2  form-check category form-check-inline">
-                                <input class="form-check-input" required='required' type="radio" name="type" ngModel id="inlineRadio4"
+                                <input class="form-check-input" required='required' ngModel  type="radio" name="type"  [(ngModel)]="Post.type" id="inlineRadio4"
                                     value="Public">
                                 <label class="form-check-label" for="inlineRadio4">Public</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" required='required' type="radio" name="type" ngModel id="inlineRadio5"
+                                <input class="form-check-input" required='required' ngModel type="radio" name="type" [(ngModel)]="Post.type"  id="inlineRadio5"
                                     value="Private">
                                 <label class="form-check-label" for="inlineRadio5">Private</label>
                             </div>

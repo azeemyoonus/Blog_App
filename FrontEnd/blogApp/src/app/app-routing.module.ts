@@ -11,7 +11,9 @@ const routes: Routes = [
   { path: 'signUp', component: SignUpComponent },
   { path: 'home', component: HomeComponent },
   { path: 'addPost', component: AddPostComponent },
+  { path: 'updatePost/:id', component: AddPostComponent },
 ]
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
