@@ -11,3 +11,12 @@ exports.addPost = (data) => {
     })
 
 }
+exports.getAllPosts = () => {
+    return new Promise((resolve, reject) => {
+        Post.find({}).then((res) => {
+            resolve(res)
+        }).catch((err) => {
+            reject(err)
+        })
+    })
+}

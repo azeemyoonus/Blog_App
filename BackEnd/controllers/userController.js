@@ -42,3 +42,14 @@ exports.addPost = async (req, res) => {
         res.status(404).send({ "error": e });
     }
 }
+exports.getAllPost=async (req,res)=>{
+try{
+    let data={
+        "response": await postServices.getAllPosts()
+    }
+    res.send(data);
+}
+catch(e){
+    res.status(404).send({ "error": e });
+}
+}

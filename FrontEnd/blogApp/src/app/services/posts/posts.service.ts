@@ -11,4 +11,8 @@ export class PostsService {
   addPost(data: {}) {
     return this.http.post(`http://localhost:3000/addPost`, data)
   }
+
+  getAllPosts() {
+    return this.http.get('http://localhost:3000/getAllPost')
+  }
 }
