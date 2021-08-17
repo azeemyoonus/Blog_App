@@ -1,0 +1,10 @@
+
+.corner{
+    border-radius: 12px 12px 12px 12px;
+    }
+.corner-top{
+    border-radius: 5px 5px 0px 0px;
+}
+.corner-left{
+    border-radius: 15px 15px 15px 15px;
+}

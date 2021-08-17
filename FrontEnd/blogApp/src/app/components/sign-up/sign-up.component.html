@@ -1,0 +1,39 @@
+<div class="row">
+    <div class='corner-right col-sm-7 col-7 col-md-7 bg-light border border-dark'>
+        <div class="my-5 ml-4 ">
+            <h1 class="text-center text-muted">Sign Up </h1>
+            <form (ngSubmit)="onSubmit(signUpForm)"  #signUpForm="ngForm">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="email" ngModel name='name' placeholder="Enter Your Name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" name='email' ngModel id="email" placeholder="Enter Your Email">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" ngModel name='password' id="password"
+                        placeholder="Enter Your Password">
+                </div>  
+                <br>
+                <div class="row mt-2 ">
+                    <div class="col-md-9 col-sm-8 col-6">
+                        <a routerLink='/login'>Login</a>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-6">
+                        <button  type="submit" [disabled]="signUpForm.invalid"  class="btn btn-primary text-left">Sign
+                            Up</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="col-md-5 col-sm-5 col-5 ">
+        <div class="text-wrap  text-center">
+            <h1 class="font-weight-light  text-muted my-auto">Some content about post Today</h1>
+        </div>
+    </div>
+
+
+</div>

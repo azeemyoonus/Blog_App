@@ -1,0 +1,62 @@
+<div class="row">
+    <div class="  col-md-8 ">
+        <div class="mx-3 my-4  corner card shadow border-success mb-3">
+            <form (ngSubmit)='addpost(addpostForm)' #addpostForm='ngForm'>
+                <div class="conatiner text-muted">
+                    <div class="form-floating my-4   mx-3 ">
+                        <input type="text" class="form-control border-muted" ngModel required='required' name='title' id="title"
+                            placeholder="Enter Title">
+                        <label for="title">Title</label>
+                    </div>
+                    <div class="ms-3">
+                        <label class="ms-3" for='category'>Category</label>
+                        <div class="ms-2  form-check category form-check-inline">
+                            <input class="form-check-input" type="radio" required='required' name="category" ngModel id="inlineRadio1"
+                                value="Techninal">
+                            <label class="form-check-label" for="inlineRadio1">Technical</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" required='required' name="category" ngModel id="inlineRadio2"
+                                value="Gardening">
+                            <label class="form-check-label" for="inlineRadio2">Gardening</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio"required='required' name="category" ngModel id="inlineRadio3"
+                                value="Social">
+                            <label class="form-check-label" for="inlineRadio3">Social</label>
+                        </div>
+                    </div>
+                        <div class="form-floating my-4  mx-3">
+                            <textarea class="form-control" required='required' ngModel placeholder="Content" name='content' ngModel
+                                id="content" style="height: 200px"></textarea>
+                            <label for="content fs-1">Contents</label>
+                        </div>
+                   
+                    <div class="row">
+                        <!-- d-grid  py-3  gap-2 d-md-flex -->
+                        <div class="col-md-7 col-sm-7 col-lg-8 pt-2">
+                            <label class="ms-4" for='category'>Type</label>
+                            <div class="ms-2  form-check category form-check-inline">
+                                <input class="form-check-input" required='required' type="radio" name="type" ngModel id="inlineRadio4"
+                                    value="Public">
+                                <label class="form-check-label" for="inlineRadio4">Public</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" required='required' type="radio" name="type" ngModel id="inlineRadio5"
+                                    value="Private">
+                                <label class="form-check-label" for="inlineRadio5">Private</label>
+                            </div>
+                        </div>
+                        <div class="col-md-5 col-sm-5 col-lg-4 mb-3">
+                            <button class="btn btn-outline-warning ms-3  me-1" type="reset">Clear All</button>
+                            <button class="btn btn-outline-success  me-1"[disabled]="addpostForm.invalid" type="submit">Add Post</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+
+</div>
