@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const connectionUrl = 'mongodb://localhost:27017/postsDB';
+const connectionUrl = 'mongodb+srv://azeemyoonus:Azeem%4012@cluster0.iee5t.mongodb.net/PostDB?retryWrites=true&w=majority';
 
 module.exports.dbConnect = (done) => {
     mongoose.connect(connectionUrl, {
